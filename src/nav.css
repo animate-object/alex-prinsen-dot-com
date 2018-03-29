@@ -1,0 +1,19 @@
+header nav ul {
+    background-color: black;
+    height: 4vh;
+    width: 100vw;
+    margin: 0;
+    padding: 2vh 0 0 0;
+    text-align: center;
+}
+
+header nav ul>li>a {
+    color: white;
+    display: inline;
+    text-decoration: none;
+}
+
+header nav ul>li {
+    margin-left: 1em;
+    margin-right: 1em;
+}
