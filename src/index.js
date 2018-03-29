@@ -1,45 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Splash from './splash/splash.jsx';
-import Maggie from './maggie/maggie.jsx';
 import './index.css';
-import { HashRouter, Route, Switch, Link } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
+import Nav from './nav.jsx';
+import Main from './main.jsx';
+
 
 class App extends React.Component {
     render() {
         return (
             <div className='app-container'>
-                <Header />
+                <Nav />
                 <Main />
             </div>
-        )
-    }
-}
-
-class Main extends React.Component {
-    render() {
-        return (
-            <main>
-                <Switch>
-                    <Route exact path='/maggie' component={Maggie} />
-                    <Route exact path='/' component={Splash} />
-                </Switch>
-            </main>
-        )
-    }
-}
-
-class Header extends React.Component {
-    render() {
-        return (
-            <header className="header">
-                <nav>
-                    <ul>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/maggie'>Meow</Link></li>
-                    </ul>
-                </nav>
-            </header>
         )
     }
 }
