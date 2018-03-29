@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './nav.css';
 import { Link } from 'react-router-dom';
 
 export default class Nav extends React.Component {
@@ -9,6 +9,7 @@ export default class Nav extends React.Component {
             <header className="header">
                 <nav>
                     <ul>
+                        <li><Link to='/about'>About</Link></li>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/maggie'>Meow</Link></li>
                     </ul>
