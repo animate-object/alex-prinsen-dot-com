@@ -1,0 +1,4 @@
+html, body, #app, #app>div {
+    height: 100%;
+    font-family: 'Lato', arial, sans-serif;
+}

@@ -1,11 +1,10 @@
 .splash-main-flex-container {
-    font-family: 'Lato', arial, sans-serif;
-    margin-top: 25vh;
+    margin-top: 25%;
     font-size: 1em;
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-direct: column;
+    flex-direction: column;
 }
 
 .splash-main-content {
