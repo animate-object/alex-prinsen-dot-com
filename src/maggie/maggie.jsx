@@ -4,7 +4,7 @@ import maggiePng from './assets/maggie.png'
 
 const STATIC_STYLES = {
     height: '5em', width: '5em',
-    position: 'absolute', transition: 'all 2s ease 0s'
+    position: 'absolute', transition: 'all 3s ease 0s'
 }
 
 
@@ -12,6 +12,7 @@ export default class Maggie extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
+            escapeCount: 0,
             styles: Object.assign({}, STATIC_STYLES)
         }
     }
@@ -27,13 +28,13 @@ export default class Maggie extends React.Component {
                 styles: Object.assign({top: `${initY}px`, left: `${initX}px`}, STATIC_STYLES)
             }
         )
-        console.log(this.state.styles);
     }
 
     moveOnClick() {
         const x = Math.round(Math.random() * this.state.maxWidth, 100);
         const y = Math.round(Math.random() * this.state.maxHeight, 100);
         this.setState({
+            escapeCount: this.state.escapeCount + 1,
             styles: Object.assign({left: `${x}px`, top: `${y}px`}, STATIC_STYLES)
         })
     }
@@ -42,8 +43,11 @@ export default class Maggie extends React.Component {
             <div className="maggie-container"
                 ref={ (containerRef) => this.containerRef = containerRef}
             >
-                <a className="traveling-maggie"
-                   style={this.state.styles}
+                <h3>Oh no, the cat got out! Can you catch her?</h3>
+                {this.state.escapeCount > 0 && 
+                    <p>Times she's gotten away: {this.state.escapeCount}
+                    </p>}
+                <a style={this.state.styles}
                    onClick={this.moveOnClick.bind(this)}>
                    <img className='maggie-png' src={maggiePng}></img>
                 </a> 
@@ -51,5 +55,4 @@ export default class Maggie extends React.Component {
         )
     }
 }
-
 
