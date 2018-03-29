@@ -1,5 +1,23 @@
-html, body, #app, #app>div {
-    height: 100vh;
+html, body, #app, #app>div>main {
+    height: 80vh;
     margin: 0; /* prevent overflow issue  */
     font-family: 'Lato', arial, sans-serif;
+    display: block;
+}
+
+header nav ul  {
+    height: 10vh;
+    width: 100vw;
+    margin: 0;
+    padding: 2vh 0 0 0 ;
+    text-align: center;
+}
+li {
+    margin-left: 1em;
+    margin-right: 1em;
+    display: inline;
+}
+a {
+    color: black;
+    text-decoration: none;
 }

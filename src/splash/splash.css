@@ -1,20 +1,22 @@
 .splash-main-flex-container {
-    margin-top: 25%;
     font-size: 1em;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
+    height: 50%
 }
 
 .splash-main-content {
+    padding-top: 20vh;
+    padding-bottom: 5vh;
     text-align: center;
 }
 
 
 .pithy-text {
     opacity: 1;
-    transition: opacity 1000ms ease;    
+    transition: opacity 1s ease;    
 }
 
 .pithy-text.is-loading {
