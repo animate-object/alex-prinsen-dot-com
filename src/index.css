@@ -6,7 +6,7 @@ html, body, #app, #app>div>main {
 }
 
 header nav ul  {
-    height: 10vh;
+    height: 4vh;
     width: 100vw;
     margin: 0;
     padding: 2vh 0 0 0 ;
