@@ -1,4 +1,4 @@
-header nav ul {
+.nav ul {
     background-color: black;
     height: 4vh;
     width: 100vw;
@@ -7,13 +7,14 @@ header nav ul {
     text-align: center;
 }
 
-header nav ul>li>a {
+.nav ul>li>a {
     color: white;
     display: inline;
     text-decoration: none;
 }
 
-header nav ul>li {
+.nav ul>li {
+    display: inline;
     margin-left: 1em;
     margin-right: 1em;
 }

@@ -9,9 +9,9 @@ export default class Nav extends React.Component {
             <header className="nav">
                 <nav>
                     <ul>
-                        <li><Link to='/about'>About</Link></li>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/maggie'>Meow</Link></li>
+                        <li><Link to='/about'>about</Link></li>
+                        <li><Link to='/'>home</Link></li>
+                        <li><Link to='/maggie'>meow</Link></li>
                     </ul>
                 </nav>
             </header>
