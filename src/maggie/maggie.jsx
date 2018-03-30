@@ -19,7 +19,6 @@ export default class Maggie extends React.Component {
             styles: Object.assign({}, STATIC_STYLES),
             levelTwoCount: Math.round(Math.random() * 40 + 10)
         };
-        console.log(this.state.levelTwoCount);
     }
     componentDidMount() { 
         const maxHeight = this.containerRef.clientHeight;
