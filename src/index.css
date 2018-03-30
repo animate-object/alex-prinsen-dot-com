@@ -5,19 +5,3 @@ html, body, #app, #app>div>main {
     display: block;
 }
 
-header nav ul  {
-    height: 4vh;
-    width: 100vw;
-    margin: 0;
-    padding: 2vh 0 0 0 ;
-    text-align: center;
-}
-li {
-    margin-left: 1em;
-    margin-right: 1em;
-    display: inline;
-}
-a {
-    color: black;
-    text-decoration: none;
-}
