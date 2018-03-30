@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default class Nav extends React.Component {
     render() {
         return (
-            <header className="header">
+            <header className="nav">
                 <nav>
                     <ul>
                         <li><Link to='/about'>About</Link></li>
