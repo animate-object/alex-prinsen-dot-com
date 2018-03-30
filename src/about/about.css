@@ -1,0 +1,15 @@
+.about-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.about-content {
+    width: 70%;
+}
+
+.about ul {
+    padding: 0;
+    list-style-type: none;
+}
