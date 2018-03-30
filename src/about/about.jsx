@@ -5,19 +5,23 @@ export default class About extends React.Component {
     render() {
         const projects = [
             {
+                text: "this site",
+                href: "https://github.com/animate-object/alex-prinsen-dot-com",
+            },
+            {
                 text: "command line tool that generates dnd characters",
-                href: ""
+                href: "https://github.com/animate-object/chargen"
             },
             {
                 text: "lambda that serves random text snippets from dynamo",
-                href: ""
+                href: "https://github.com/animate-object/pithy-text-lambda"
             },
             {
                 text: "band that sang randomly generated lyrics over improvised instrumentals",
-                href: ""
+                href: "https://rejectedgnarl.bandcamp.com/album/brazen-savior/"
             },
             {
-                text: "pretty excellent baked macaroni and cheese"
+                text: "pretty excellent baked macaroni and cheese (sorry, no link)"
             }
         ]
         return (
@@ -42,7 +46,7 @@ export default class About extends React.Component {
                             projects.map(item => {
                                 return (
                                     <li>
-                                        <a href={item.href || ""}>{item.text}</a>
+                                        {item.href ? <a href={item.href}>{item.text}</a> : item.text}
                                     </li>
                                 )
                             })
@@ -50,7 +54,7 @@ export default class About extends React.Component {
                     </ul>
                     <h4>coming soon</h4>
                     <p>
-                        I have lots of plans for this site.
+                        coming soon
                     </p> 
                     <ul>
                         <li>blog component</li>
