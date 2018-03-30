@@ -53,9 +53,6 @@ export default class About extends React.Component {
                         }
                     </ul>
                     <h4>coming soon</h4>
-                    <p>
-                        coming soon
-                    </p> 
                     <ul>
                         <li>blog component</li>
                         <li>write ups about tech used on the site</li>
