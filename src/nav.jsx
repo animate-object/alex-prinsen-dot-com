@@ -11,7 +11,7 @@ export default class Nav extends React.Component {
                     <ul>
                         <li><Link to='/about'>about</Link></li>
                         <li><Link to='/'>home</Link></li>
-                        <li><Link to='/maggie'>meow</Link></li>
+                        <li><Link to='/maggie'>cat game</Link></li>
                     </ul>
                 </nav>
             </header>
