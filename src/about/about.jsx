@@ -41,11 +41,11 @@ export default class About extends React.Component {
                     </p>
                     <h4>examples</h4>
                     <p>here are some projects I've worked on in my freetime</p>
-                    <ul>
+                    <ul className="projects">
                         {
                             projects.map(item => {
                                 return (
-                                    <li>
+                                    <li key={item.text}>
                                         {item.href ? <a href={item.href}>{item.text}</a> : item.text}
                                     </li>
                                 )
