@@ -17,7 +17,7 @@ export default class Maggie extends React.Component {
         this.state = {
             escapeCount: 0,
             styles: Object.assign({}, STATIC_STYLES),
-            levelTwoCount: Math.round(Math.random() * 50 + 20)
+            levelTwoCount: Math.round(Math.random() * 40 + 10)
         };
         console.log(this.state.levelTwoCount);
     }
@@ -67,6 +67,7 @@ export default class Maggie extends React.Component {
                 ref={ (containerRef) => this.containerRef = containerRef}
             >
                 <h3>oh no, my cat maggie got out! can you catch her?</h3>
+                {this.hasMaggieAscended() && <h4> LEVEL 2 </h4>}
                 {this.state.escapeCount > 0 && 
                     <p>times she's gotten away: {this.state.escapeCount}
                     </p>}
