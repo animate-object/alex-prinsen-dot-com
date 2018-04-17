@@ -60,7 +60,7 @@ export default class About extends React.Component {
                     </ul>
                     <h4>contact</h4>
                     <p>
-                        <a href="https://github.com/animate-object"></a>
+                        <a href="https://github.com/animate-object">github</a><br/>
                         <a href="mailto:alexander.f.prinsen@gmail.com">alexander.f.prinsen@gmail.com</a>
                     </p>
                 </div>
