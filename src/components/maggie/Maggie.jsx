@@ -1,5 +1,5 @@
 import React from 'react';
-import './maggie.css';
+import './Maggie.css';
 import maggiePng from './assets/maggie.png'
 import maggieAscendedPng from './assets/maggieAscended.png'
 

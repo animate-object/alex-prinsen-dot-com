@@ -1,7 +1,5 @@
-html, body, #app, #app>div>main {
-    height: 80vh;
-    margin: 0; /* prevent overflow issue  */
+html, body {
+    margin: 0;
     font-family: 'Lato', arial, sans-serif;
-    display: block;
 }
 

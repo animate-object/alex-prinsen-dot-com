@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Splash from './splash/splash.jsx';
-import Maggie from './maggie/maggie.jsx';
-import About from './about/about.jsx';
-import './index.css';
+import Splash from '../splash/Splash.jsx';
+import Maggie from '../maggie/Maggie.jsx';
+import About from '../about/About.jsx';
+import './App.css';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 
-export default class Main extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
             <main>

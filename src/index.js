@@ -1,27 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { HashRouter } from 'react-router-dom';
-import Nav from './nav.jsx';
-import Main from './main.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import GlobalNav from './components/globalNav/GlobalNav.jsx';
+import App from './components/app/App.jsx';
 
 
-class App extends React.Component {
-    render() {
-        return (
-            <div className='app-container'>
-                <Nav />
-                <Main />
-            </div>
-        )
-    }
-}
+const Root = () => (
+    <BrowserRouter>
+        <div className='app-container'>
+            <GlobalNav />
+            <App />
+        </div>
+    </BrowserRouter>
+)
 
 ReactDOM.render(
-    (<HashRouter>
-        <App />
-    </HashRouter>
-    ), document.getElementById('app')
+    <Root />, document.getElementById('app')
 );
 
 if (module.hot) { module.hot.accept(); }

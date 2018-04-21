@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './nav.css';
+import './GlobalNav.css';
 import { Link } from 'react-router-dom';
 
-export default class Nav extends React.Component {
+export default class GlobalNav extends React.Component {
     render() {
         return (
             <header className="nav">
