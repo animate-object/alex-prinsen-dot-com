@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Splash from '../splash/Splash.jsx';
 import Maggie from '../maggie/Maggie.jsx';
 import About from '../about/About.jsx';
+import './App.css';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 

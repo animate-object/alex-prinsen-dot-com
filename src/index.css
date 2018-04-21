@@ -3,7 +3,3 @@ html, body {
     font-family: 'Lato', arial, sans-serif;
 }
 
-#app>div>main {
-    height: 80vh;
-}
-
