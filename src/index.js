@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
-import Nav from './nav.jsx';
-import App from './app.jsx';
+import GlobalNav from './GlobalNav.jsx';
+import App from './App.jsx';
 
 
 const Root = () => (
     <BrowserRouter>
         <div className='app-container'>
-            <Nav />
+            <GlobalNav />
             <App />
         </div>
     </BrowserRouter>
