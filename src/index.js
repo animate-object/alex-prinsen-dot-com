@@ -4,7 +4,7 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import GlobalNav from './components/globalNav/GlobalNav.jsx';
 import App from './components/app/App.jsx';
-import Provider from 'redux';
+import { Provider } from 'react-redux';
 
 const Root = () => (
     <Provider>
