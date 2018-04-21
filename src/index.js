@@ -5,9 +5,10 @@ import { BrowserRouter } from 'react-router-dom';
 import GlobalNav from './components/globalNav/GlobalNav.jsx';
 import App from './components/app/App.jsx';
 import { Provider } from 'react-redux';
+import store from './store';
 
 const Root = () => (
-    <Provider>
+    <Provider store={store}>
         <BrowserRouter>
             <div className='app-container'>
                 <GlobalNav />
