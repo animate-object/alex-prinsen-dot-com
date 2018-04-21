@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
-import GlobalNav from './GlobalNav.jsx';
-import App from './App.jsx';
+import GlobalNav from './components/globalNav/GlobalNav.jsx';
+import App from './components/app/App.jsx';
 
 
 const Root = () => (

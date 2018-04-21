@@ -1,6 +1,6 @@
 import React from 'react';
-import './splash.css';
-import PithyText from './pithy/pithy.jsx'
+import './Splash.css';
+import PithyText from './pithy/PithyText.jsx'
 
 export default class Splash extends React.Component {
     render() {
