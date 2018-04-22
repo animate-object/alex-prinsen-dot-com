@@ -11,6 +11,8 @@ import { connect } from 'react-redux';
 
 const TRANSITION_EASY = 'all 2500ms ease 0s';
 const TRANSITION_HARD = 'all 1000ms ease 0s';
+const TRANSITION_VERY_HARD = 'all 500ms ease 0s';
+const NO_TRANSITION = 'none';
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -41,12 +43,27 @@ class Maggie extends React.Component {
             {
                 imagePath: maggiePng,
                 transition: TRANSITION_EASY,
-                threshold: 10
+                threshold: Math.random() * 40 + 10
             },
             {
                 imagePath: maggieAscendedPng,
                 transition: TRANSITION_HARD,
-                threshold: 30
+                threshold: Math.random() * 30 + 50
+            },
+            {
+                imagePath: maggieAscendedPng,
+                transition: TRANSITION_VERY_HARD,
+                threshold: Math.random() * 40 + 80
+            },
+            {
+                imagePath: maggieAscendedPng,
+                transition: TRANSITION_VERY_HARD,
+                threshold: Math.random() * 50 + 120
+            },
+            {
+                imagePath: maggieAscendedPng,
+                transition: NO_TRANSITION,
+                threshold: Math.random() * 60 + 170
             }
         ])
     }
@@ -58,7 +75,7 @@ class Maggie extends React.Component {
             >
                 <h3>oh no, my cat maggie got out! can you catch her?</h3>
                 {
-                    this.props.currentLevel > 2 && 
+                    this.props.currentLevel > 1 && 
                     <h4> LEVEL {this.props.currentLevel} </h4>
                 }
                 {

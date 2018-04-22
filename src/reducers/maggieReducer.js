@@ -39,7 +39,7 @@ export const maggieReducer = (state={}, action) => {
                 levelUpThreshold: state.levelData[newLevel - 1].threshold,
                 styles: {
                     ...state.styles,
-                    transition: state.levelData[newLevel - 1].threshold,
+                    transition: state.levelData[newLevel - 1].transition,
                     top: `${Math.floor(state.containerHeight * action.y)}px`,
                     left: `${Math.floor(state.containerWidth * action.x)}px`
                 }
