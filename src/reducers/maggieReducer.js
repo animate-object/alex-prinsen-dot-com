@@ -12,43 +12,36 @@ export const maggieReducer = (state={}, action) => {
         case INIT_GAME:
             return {
                 ...state,
-                game: {
-                    levelData: action.payload.levelData,
-                    currentLevel: 0,
-                    escapeCount: 0,
-                    currentImageSrc: action.payload.levelData[0].imagePath,
-                    levelUpThreshold: action.payload.levelData[0].threshold,
-                },
-                containerStyles: {
-                    height: action.payload.containerHeight,
-                    width: action.payload.containerWidth
-                },
-                maggieStyles: {
+                levelData: action.levelData,
+                currentLevel: 1,
+                escapeCount: 0,
+                currentImageSrc: action.levelData[0].imagePath,
+                levelUpThreshold: action.levelData[0].threshold,
+                containerHeight: action.containerHeight,
+                containerWidth: action.containerWidth,
+                styles: {
                     ...MAGGIE_INIT_CONSTANTS,
-                    top: `${Math.round(action.payload.containerHeight) * 0.5}px`,
-                    left: `${Math.round(action.payload.containerWidth) * 0.5}px`,
-                    transition: action.payload.levelData[0].transition
+                    top: `${Math.round(action.containerHeight) * 0.5}px`,
+                    left: `${Math.round(action.containerWidth) * 0.5}px`,
+                    transition: action.levelData[0].transition
                 }
             };
         case MOVE_ON_CLICK:
-            newCount = state.game.escapeCount + 1
-            levelUp = state.game.escapeCount > state.maggie.game.levelUpThreshold
-            newLevel = levelUp ? 
-                state.game.currentLevel + 1: state.maggie.game.currentLevel
+            const newCount = state.escapeCount + 1
+            const levelUp = state.escapeCount > state.levelUpThreshold
+            const newLevel = levelUp ? 
+                state.currentLevel + 1: state.currentLevel
             return {
                 ...state,
-                game: {
-                    ...state.game,
-                    currentLevel: newLevel,
-                    escapeCount: newCount,
-                    currentImageSrc: state.game.levelData[newLevel].imagePath,
-                    levelUpThreshold: state.game.levelData[newLevel].threshold
-                },
-                maggieStyles: {
-                    ...state.maggieStyles,
-                    transition: state.game.levelData[newLevel].threshold,
-                    top: `${action.payload.y}px`,
-                    left: `${action.payload.x}px`
+                currentLevel: newLevel,
+                escapeCount: newCount,
+                currentImageSrc: state.levelData[newLevel - 1].imagePath,
+                levelUpThreshold: state.levelData[newLevel - 1].threshold,
+                styles: {
+                    ...state.styles,
+                    transition: state.levelData[newLevel - 1].threshold,
+                    top: `${Math.floor(state.containerHeight * action.y)}px`,
+                    left: `${Math.floor(state.containerWidth * action.x)}px`
                 }
 
             }

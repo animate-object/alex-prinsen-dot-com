@@ -1,9 +1,8 @@
-export const MaggieGameActions = {
-    INIT_GAME: 'INIT_GAME',
-    MOVE_ON_CLICK: 'MOVE_ON_CLICK'
-}
+export const INIT_GAME = 'INIT_GAME'
+export const MOVE_ON_CLICK = 'MOVE_ON_CLICK'
 
-function initMaggieGame(containerHeight, containerWidth, levelData) {
+
+export function initMaggieGame(containerHeight, containerWidth, levelData) {
     return {
         type: INIT_GAME,
         containerHeight,
@@ -12,11 +11,11 @@ function initMaggieGame(containerHeight, containerWidth, levelData) {
     }
 }
 
-function maggieMovesOnClick(x, y) {
+export function moveOnClick(x, y) {
     return {
         type: MOVE_ON_CLICK,
-        x,
-        y
+        x: Math.random(),
+        y: Math.random()
     }
 }
 
