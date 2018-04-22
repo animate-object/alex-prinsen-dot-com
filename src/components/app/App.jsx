@@ -10,7 +10,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 export default class App extends React.Component {
     render() {
         return (
-            <main>
+            <main className='content-container'>
                 <Switch>
                     <Route exact path='/maggie' component={Maggie} />
                     <Route exact path='/' component={Splash} />
