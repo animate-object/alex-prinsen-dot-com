@@ -1,9 +1,9 @@
 .nav ul {
     background-color: black;
-    height: 4vh;
+    height: 1em;
     width: 100vw;
     margin: 0;
-    padding: 2vh 0 0 0;
+    padding: 1em 0 1em 0;
     text-align: center;
 }
 
