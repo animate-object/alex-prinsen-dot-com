@@ -1,24 +1,16 @@
 import React from 'react';
 import './Maggie.css';
-import maggiePng from './assets/maggie.png';
-import maggieAscendedPng from './assets/maggieAscended.png';
 import {
     moveOnClick,
     initMaggieGame
 } from '../../actions';
 import { connect } from 'react-redux';
 
-
-const TRANSITION_EASY = 'all 2500ms ease 0s';
-const TRANSITION_HARD = 'all 1000ms ease 0s';
-const TRANSITION_VERY_HARD = 'all 500ms ease 0s';
-const NO_TRANSITION = 'none';
-
 const mapDispatchToProps = dispatch => {
     return {
-        moveOnClick: (x, y) => dispatch(moveOnClick(x, y)),
-        initMaggieGame: (containerHeight, containerWidth, levelData) => { 
-            dispatch(initMaggieGame(containerHeight, containerWidth, levelData))
+        moveOnClick: () => dispatch(moveOnClick()),
+        initMaggieGame: (containerHeight, containerWidth) => { 
+            dispatch(initMaggieGame(containerHeight, containerWidth))
         }
     }
 }
@@ -39,33 +31,7 @@ class Maggie extends React.Component {
     componentDidMount() { 
         const maxHeight = this.containerRef.clientHeight;
         const maxWidth = this.containerRef.clientWidth;
-        this.props.initMaggieGame(maxHeight, maxWidth, [
-            {
-                imagePath: maggiePng,
-                transition: TRANSITION_EASY,
-                threshold: Math.random() * 40 + 10
-            },
-            {
-                imagePath: maggieAscendedPng,
-                transition: TRANSITION_HARD,
-                threshold: Math.random() * 30 + 50
-            },
-            {
-                imagePath: maggieAscendedPng,
-                transition: TRANSITION_VERY_HARD,
-                threshold: Math.random() * 40 + 80
-            },
-            {
-                imagePath: maggieAscendedPng,
-                transition: TRANSITION_VERY_HARD,
-                threshold: Math.random() * 50 + 120
-            },
-            {
-                imagePath: maggieAscendedPng,
-                transition: NO_TRANSITION,
-                threshold: Math.random() * 60 + 170
-            }
-        ])
+        this.props.initMaggieGame(maxHeight, maxWidth) 
     }
 
     render() {
