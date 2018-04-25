@@ -3,7 +3,7 @@ import './Maggie.css';
 import {
     moveOnClick,
     initMaggieGame
-} from '../../actions';
+} from '../../actions/maggieActions';
 import { connect } from 'react-redux';
 
 const mapDispatchToProps = dispatch => {
