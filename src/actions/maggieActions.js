@@ -1,4 +1,4 @@
-import { MAGGIE_LEVEL_DATA } from './assets/MAGGIE_LEVEL_DATA'
+import { MAGGIE_LEVEL_DATA } from '../assets/MAGGIE_LEVEL_DATA'
 
 export const INIT_GAME = 'INIT_GAME'
 export const MOVE_ON_CLICK = 'MOVE_ON_CLICK'
