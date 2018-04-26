@@ -55,10 +55,17 @@ export function loadPostList() {
 }
 
 export function loadPost(title) {
-    return function(dispatch) {
+    return function(dispatch, getState) {
         dispatch(loadPostRequest(title))
-        getPost(title)
-            .then(res => dispatch(loadPostSuccess(title, res)))
-            .catch(err => dispatch(loadPostFailure(title, err)))
+        const loadedPost = getState().posts.postsCache[title]
+        if (loadedPost) {
+            console.log(loadedPost);
+            dispatch(loadPostSuccess(title, loadedPost));
+        } else {
+            getPost(title)
+                .then(res => dispatch(loadPostSuccess(title, res)))
+                .catch(err => dispatch(loadPostFailure(title, err)))
+        }
     }
 }
+
