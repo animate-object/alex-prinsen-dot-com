@@ -1,0 +1,15 @@
+.post-list-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.post-list-content {
+    wicth: 50%
+}
+
+.post-list-content {
+    padding: 0;
+    list-style-type: none;
+}
