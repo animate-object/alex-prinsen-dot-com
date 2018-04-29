@@ -46,11 +46,15 @@ export function loadPostFailure(title, error) {
 
 
 export function loadPostList() {
-    return function(dispatch) {
-        dispatch(loadPostListRequest())
-        getPostList()
-            .then(res => dispatch(loadPostListSuccess(res)))
-            .catch(err => dispatch(loadPostListFailure(err)))
+    return function(dispatch, getState) {
+        if (getState().listOfPosts && getState().listOfPosts.length > 0) {
+            dispatch(loadPostListSuccess(getState().listOfPosts));
+        } else {
+            dispatch(loadPostListRequest())
+            getPostList()
+                .then(res => dispatch(loadPostListSuccess(res.data)))
+                .catch(err => dispatch(loadPostListFailure(err)))
+        }
     }
 }
 
@@ -59,11 +63,10 @@ export function loadPost(title) {
         dispatch(loadPostRequest(title))
         const loadedPost = getState().posts.postsCache[title]
         if (loadedPost) {
-            console.log(loadedPost);
             dispatch(loadPostSuccess(title, loadedPost));
         } else {
             getPost(title)
-                .then(res => dispatch(loadPostSuccess(title, res)))
+                .then(res => dispatch(loadPostSuccess(title, res.data)))
                 .catch(err => dispatch(loadPostFailure(title, err)))
         }
     }

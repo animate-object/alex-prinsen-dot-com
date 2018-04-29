@@ -7,7 +7,7 @@ const defaultReducer = (state = {}, action) => state;
 export const rootReducer = combineReducers({
     default: defaultReducer,
     maggie: maggieReducer,
-    postList: postListReducer,
-    posts: postReducer
+    posts: postListReducer,
+    post: postReducer
 });
 
