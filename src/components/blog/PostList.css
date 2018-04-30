@@ -3,13 +3,19 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    text-align: center;
 }
 
 .post-list-content {
-    wicth: 50%
-}
-
-.post-list-content {
+    width: 50%;
     padding: 0;
     list-style-type: none;
 }
+
+.post-list-content>li>h2 {
+    margin: 0;
+    padding: 1em;
+}
+.post-list-content>li>h2:hover {
+   background-color: #eeeeee;
+} 

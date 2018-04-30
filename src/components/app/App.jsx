@@ -16,7 +16,7 @@ export default class App extends React.Component {
                     <Route exact path='/maggie' component={Maggie} />
                     <Route exact path='/' component={Splash} />
                     <Route exact path='/about' component={About} />
-                    <Route exact path='/blog' component={Blog} />
+                    <Route path='/blog' component={Blog} />
                 </Switch>
             </main>
         )

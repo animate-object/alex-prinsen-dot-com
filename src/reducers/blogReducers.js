@@ -28,25 +28,28 @@ export function postListReducer(state = POST_LIST_INITIAL_STATE, action) {
 
 const POSTS_INITIAL_STATE = {
     currentlyLoadedPost: undefined,
+    currentlyLoadedPostTitle: undefined,
     postCache: {},
     isFetching: false,
     failedToFetchLastPost: false
 }
 
 export function postReducer(state = POSTS_INITIAL_STATE, action) {
+    console.log(action);
     switch (action.type) {
         case LOAD_POST_REQUEST:
             return {...state, isFetching: true}
         case LOAD_POST_SUCCESS:
+            console.log(action);
             return {
-                ...state,
                 postCache: {
                     ...state.postCache,
                     [action.title]: action.data
                 },
                 isFetching: false,
                 failedToFetchlastPost: false,
-                currentlyLoadedPost: action.data
+                currentlyLoadedPost: action.data,
+                currentlyLoadedPostTitle: action.title
             }
         case LOAD_POST_FAILURE:
             return {

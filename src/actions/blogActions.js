@@ -5,9 +5,9 @@ export const LOAD_POST_LIST_SUCCESS = 'LOAD_POST_LIST_SUCCESS';
 export const LOAD_POST_LIST_FAILURE = 'LOAD_POST_LIST_FAILURE';
 
 
-export const LOAD_POST_REQUEST = 'LOAD_POST_LIST_REQUEST';
-export const LOAD_POST_SUCCESS = 'LOAD_POST_LIST_SUCCESS';
-export const LOAD_POST_FAILURE = 'LOAD_POST_LIST_FAILURE';
+export const LOAD_POST_REQUEST = 'LOAD_POST_REQUEST';
+export const LOAD_POST_SUCCESS = 'LOAD_POST_SUCCESS';
+export const LOAD_POST_FAILURE = 'LOAD_POST_FAILURE';
 
 
 const API_HOST = 'https://3ugvz6jhxa.execute-api.us-east-1.amazonaws.com/dev';
@@ -59,12 +59,13 @@ export function loadPostList() {
 }
 
 export function loadPost(title) {
+    console.log(title);
     return function(dispatch, getState) {
-        dispatch(loadPostRequest(title))
-        const loadedPost = getState().posts.postsCache[title]
+        const loadedPost = getState().post.postCache[title]
         if (loadedPost) {
             dispatch(loadPostSuccess(title, loadedPost));
         } else {
+            dispatch(loadPostRequest(title))
             getPost(title)
                 .then(res => dispatch(loadPostSuccess(title, res.data)))
                 .catch(err => dispatch(loadPostFailure(title, err)))

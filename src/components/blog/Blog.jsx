@@ -1,7 +1,9 @@
 import React from 'react';
 import { PostList } from './PostList';
+import BlogPost from './BlogPost';
 import { connect } from 'react-redux';
 import { loadPostList } from '../../actions/blogActions';
+import { Route, Switch } from 'react-router';
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -20,12 +22,26 @@ class Blog extends React.Component {
         super(props);
     }
     componentDidMount() {
+        console.log('Blog componentDidMount');
         this.props.loadPostList()
     }
     render() {
         return (
             <div>
-                <PostList postList={this.props.postList}/>
+                <p> blog </p>
+                <Switch>
+                    <Route path='/blog/:title'
+                        component={BlogPost}
+                    />
+                    <Route exact path='/blog'
+                        component={
+                            () => {
+                                return <PostList 
+                                    postList={this.props.postList}/>
+                            }
+                        }
+                    />
+                </Switch>
             </div>
         )
     }
