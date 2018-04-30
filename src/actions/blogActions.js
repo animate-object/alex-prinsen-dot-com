@@ -59,7 +59,6 @@ export function loadPostList() {
 }
 
 export function loadPost(title) {
-    console.log(title);
     return function(dispatch, getState) {
         const loadedPost = getState().post.postCache[title]
         if (loadedPost) {

@@ -10,7 +10,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state);
     return {
         content: state.post.currentlyLoadedPost,
         title: ownProps.match.params.title
@@ -27,6 +26,7 @@ class BlogPost extends React.Component {
         return (
             <div>
                 <h1>{this.props.title}</h1>
+                <p>{this.props.content}</p>
             </div>
         )
     }

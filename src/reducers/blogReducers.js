@@ -35,12 +35,10 @@ const POSTS_INITIAL_STATE = {
 }
 
 export function postReducer(state = POSTS_INITIAL_STATE, action) {
-    console.log(action);
     switch (action.type) {
         case LOAD_POST_REQUEST:
             return {...state, isFetching: true}
         case LOAD_POST_SUCCESS:
-            console.log(action);
             return {
                 postCache: {
                     ...state.postCache,

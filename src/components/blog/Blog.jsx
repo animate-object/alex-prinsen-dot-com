@@ -22,7 +22,6 @@ class Blog extends React.Component {
         super(props);
     }
     componentDidMount() {
-        console.log('Blog componentDidMount');
         this.props.loadPostList()
     }
     render() {
