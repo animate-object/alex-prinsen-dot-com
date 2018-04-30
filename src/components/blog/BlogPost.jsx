@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loadPost } from '../../actions/blogActions';
-
+import ReactMarkdown from 'react-markdown';
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -25,8 +25,7 @@ class BlogPost extends React.Component {
     render(){
         return (
             <div>
-                <h1>{this.props.title}</h1>
-                <p>{this.props.content}</p>
+                <ReactMarkdown source={this.props.content} />
             </div>
         )
     }

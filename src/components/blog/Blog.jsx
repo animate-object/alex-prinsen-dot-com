@@ -27,7 +27,6 @@ class Blog extends React.Component {
     render() {
         return (
             <div>
-                <p> blog </p>
                 <Switch>
                     <Route path='/blog/:title'
                         component={BlogPost}
