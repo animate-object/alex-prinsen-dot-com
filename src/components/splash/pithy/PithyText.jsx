@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './PithyText.css';
 
 export default class PithyText extends React.Component {
     constructor(props) {
@@ -26,15 +27,20 @@ export default class PithyText extends React.Component {
     }
     render() {
         return (
-            <div className={"pithy-text " + (this.isLoadingText() && "is-loading")}>
-                {this.state &&
-                    <a onClick={this.reloadText}>
-                        <p>
-                            {this.state.firstLine}<br/>
-                            {this.state.secondLine}
-                        </p>
-                    </a>
-                }
+            <div className="pithy-text-container">
+                <div className={"pithy-text " + (this.isLoadingText() && "is-loading")}>
+                    {this.state &&
+                        <a onClick={this.reloadText}>
+                            <span>
+                                {this.state.firstLine}
+                            </span>
+                            <br/>
+                            <span>
+                                {this.state.secondLine}
+                            </span>
+                        </a>
+                    }
+                </div>
             </div>
         )
     }

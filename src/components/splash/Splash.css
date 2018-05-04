@@ -14,11 +14,3 @@
 }
 
 
-.pithy-text {
-    opacity: 1;
-    transition: opacity 1s ease;    
-}
-
-.pithy-text.is-loading {
-    opacity: 0;
-}
