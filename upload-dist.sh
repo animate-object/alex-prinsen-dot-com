@@ -4,7 +4,7 @@ read -p "input the super secret public bucket name: " BUCKET_NAME
 echo ---------------------------------------------------
 echo building latest web content
 echo ---------------------------------------------------
-
+npm run build
 echo ---------------------------------------------------
 echo uploading new web content to $BUCKET_NAME
 echo ---------------------------------------------------
