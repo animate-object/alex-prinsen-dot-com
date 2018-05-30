@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { maggieReducer } from './maggieReducer';
-import { postListReducer, postReducer } from './blogReducers';
+import { postListReducer } from './postListReducer';
+import { postReducer } from './postReducer';
 
 const defaultReducer = (state = {}, action) => state;
 
