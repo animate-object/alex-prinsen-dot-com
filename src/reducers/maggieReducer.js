@@ -1,4 +1,4 @@
-import { INIT_GAME, MOVE_ON_CLICK }  from '../actions'
+import { INIT_GAME, MOVE_ON_CLICK }  from '../actions/maggieActions'
 
 
 const MAGGIE_INIT_CONSTANTS = {

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Splash from '../splash/Splash.jsx';
 import Maggie from '../maggie/Maggie.jsx';
 import About from '../about/About.jsx';
+import Blog from '../blog/Blog.jsx';
 import './App.css';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ export default class App extends React.Component {
                     <Route exact path='/maggie' component={Maggie} />
                     <Route exact path='/' component={Splash} />
                     <Route exact path='/about' component={About} />
+                    <Route path='/blog' component={Blog} />
                 </Switch>
             </main>
         )

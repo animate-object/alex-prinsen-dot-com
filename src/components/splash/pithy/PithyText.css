@@ -1,0 +1,21 @@
+.pithy-text-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.pithy-text {
+    opacity: 1;
+    transition: opacity 1s ease;
+    display: inline-block;
+    padding: .5em;
+}
+
+.pithy-text:not(.is-loading):hover{
+    background-color: #f6f6f6;
+    border-radius: .2em;
+}
+
+.pithy-text.is-loading {
+    opacity: 0;
+}

@@ -1,0 +1,13 @@
+.post-list-entry>a, .post-list-entry>a:visited {
+      color: inherit;
+      text-decoration: none;
+}
+
+h2 {
+    margin: 0;
+    padding: 1em;
+    border-radius: .2em;
+}
+h2:hover {
+   background-color: #eeeeee;
+}
