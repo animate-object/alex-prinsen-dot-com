@@ -3,11 +3,12 @@
       text-decoration: none;
 }
 
-h2 {
+.post-list-title {
     margin: 0;
     padding: 1em;
     border-radius: .2em;
 }
-h2:hover {
+.post-list-title:hover {
    background-color: #eeeeee;
 }
+

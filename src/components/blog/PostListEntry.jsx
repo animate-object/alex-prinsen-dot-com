@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import './PostListEntry.css'
 
 export const PostListEntry = props => {
-    const displayTitle = props.title.replace(/\_/, " ").slice(0, -3)
+    const displayTitle = props.title.replace(/\_/g, " ").slice(0, -3)
     return (
-        <li class="post-list-entry">
+        <li className={"post-list-entry"}>
             <Link to={`/blog/${props.title}`}>
-                <h2>{displayTitle}</h2>
+                <h2 className={"post-list-title"}>{displayTitle}</h2>
             </Link>
         </li>
     ) 
