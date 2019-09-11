@@ -1,8 +1,8 @@
-import { 
+import {
     LOAD_POST_REQUEST,
     LOAD_POST_SUCCESS,
     LOAD_POST_FAILURE
-} from '../actions/blogActions'
+} from './blogActions'
 
 
 const POSTS_INITIAL_STATE = {
@@ -16,7 +16,7 @@ const POSTS_INITIAL_STATE = {
 export function postReducer(state = POSTS_INITIAL_STATE, action) {
     switch (action.type) {
         case LOAD_POST_REQUEST:
-            return {...state, isFetching: true}
+            return { ...state, isFetching: true }
         case LOAD_POST_SUCCESS:
             return {
                 postCache: {

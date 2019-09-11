@@ -1,4 +1,4 @@
-import { INIT_GAME, MOVE_ON_CLICK }  from '../actions/maggieActions'
+import { INIT_GAME, MOVE_ON_CLICK } from '../actions.js'
 
 
 const MAGGIE_INIT_CONSTANTS = {
@@ -7,7 +7,7 @@ const MAGGIE_INIT_CONSTANTS = {
     position: 'absolute'
 }
 
-export const maggieReducer = (state={}, action) => {
+export const maggieReducer = (state = {}, action) => {
     switch (action.type) {
         case INIT_GAME:
             return {
@@ -29,8 +29,8 @@ export const maggieReducer = (state={}, action) => {
         case MOVE_ON_CLICK:
             const newCount = state.escapeCount + 1
             const levelUp = state.escapeCount > state.levelUpThreshold
-            const newLevel = levelUp ? 
-                state.currentLevel + 1: state.currentLevel
+            const newLevel = levelUp ?
+                state.currentLevel + 1 : state.currentLevel
             return {
                 ...state,
                 currentLevel: newLevel,

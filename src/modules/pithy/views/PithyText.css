@@ -9,6 +9,7 @@
     transition: opacity 1s ease;
     display: inline-block;
     padding: .5em;
+    cursor: pointer
 }
 
 .pithy-text:not(.is-loading):hover{

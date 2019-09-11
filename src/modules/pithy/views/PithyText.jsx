@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './PithyText.css';
 
-export default class PithyText extends React.Component {
+export class PithyText extends React.Component {
     constructor(props) {
         super(props);
         this.reloadText = this.reloadText.bind(this);
@@ -19,7 +19,7 @@ export default class PithyText extends React.Component {
     }
     reloadText(e) {
         e.preventDefault();
-        this.setState({firstLine: undefined, secondLine: undefined});
+        this.setState({ firstLine: undefined, secondLine: undefined });
         this.loadText();
     }
     isLoadingText() {
@@ -34,7 +34,7 @@ export default class PithyText extends React.Component {
                             <span>
                                 {this.state.firstLine}
                             </span>
-                            <br/>
+                            <br />
                             <span>
                                 {this.state.secondLine}
                             </span>

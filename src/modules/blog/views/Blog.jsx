@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router';
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadPostList: () => dispatch(loadPostList())        
+        loadPostList: () => dispatch(loadPostList())
     }
 }
 
@@ -18,7 +18,7 @@ const mapStateToProps = state => {
 }
 
 class Blog extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
     }
     componentDidMount() {
@@ -34,8 +34,8 @@ class Blog extends React.Component {
                     <Route exact path='/blog'
                         component={
                             () => {
-                                return <PostList 
-                                    postList={this.props.postList}/>
+                                return <PostList
+                                    postList={this.props.postList} />
                             }
                         }
                     />

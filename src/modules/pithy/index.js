@@ -1,0 +1,1 @@
+export { PithyText } from './views/PithyText'
