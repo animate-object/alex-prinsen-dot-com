@@ -8,6 +8,7 @@ import { Nav } from "../../nav";
 import { Splash } from "../../splash";
 import { Maggie } from "../../maggie";
 import { Blog } from "../../blog";
+import { WidgetsPage } from "../../widgets";
 
 export const App = () => (
   <main className="content-container">
@@ -17,6 +18,7 @@ export const App = () => (
       <Route exact path="/" component={Splash} />
       <Route exact path="/about" component={AboutPage} />
       <Route path="/blog" component={Blog} />
+      <Route path="/widgets" component={WidgetsPage} />
     </Switch>
   </main>
 );

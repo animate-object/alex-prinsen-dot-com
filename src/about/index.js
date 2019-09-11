@@ -1,3 +1,1 @@
-import About from './views/About'
-
-export { About as AboutPage }
+export { About as AboutPage } from "./views/About";
