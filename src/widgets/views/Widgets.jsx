@@ -1,11 +1,15 @@
 import React from "react";
 import "./Widgets.css";
 
-const widget = (href, title, desc) => ({ href, title, desc });
+const widget = (href, title, desc) => ({
+  href,
+  title,
+  desc
+});
 
 const vanillaJsWidgets = [
   widget(
-    "/stripees.html",
+    "stripees.html",
     "Stripees",
     "Started as an experiment with css width/height animations"
   )
