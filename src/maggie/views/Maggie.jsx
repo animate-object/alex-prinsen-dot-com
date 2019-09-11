@@ -3,13 +3,13 @@ import './Maggie.css';
 import {
     moveOnClick,
     initMaggieGame
-} from '../../actions/maggieActions';
+} from '../actions';
 import { connect } from 'react-redux';
 
 const mapDispatchToProps = dispatch => {
     return {
         moveOnClick: () => dispatch(moveOnClick()),
-        initMaggieGame: (containerHeight, containerWidth) => { 
+        initMaggieGame: (containerHeight, containerWidth) => {
             dispatch(initMaggieGame(containerHeight, containerWidth))
         }
     }
@@ -25,27 +25,27 @@ const mapStateToProps = state => {
 }
 
 class Maggie extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
     }
-    componentDidMount() { 
+    componentDidMount() {
         const maxHeight = this.containerRef.clientHeight;
         const maxWidth = this.containerRef.clientWidth;
-        this.props.initMaggieGame(maxHeight, maxWidth) 
+        this.props.initMaggieGame(maxHeight, maxWidth)
     }
 
     render() {
         return (
             <div className="maggie-container"
-                ref={ (containerRef) => this.containerRef = containerRef}
+                ref={(containerRef) => this.containerRef = containerRef}
             >
                 <h3>oh no, my cat maggie got out! can you catch her?</h3>
                 {
-                    this.props.currentLevel > 1 && 
+                    this.props.currentLevel > 1 &&
                     <h4> LEVEL {this.props.currentLevel} </h4>
                 }
                 {
-                    this.props.escapeCount > 0 && 
+                    this.props.escapeCount > 0 &&
                     <p>times she's gotten away: {this.props.escapeCount}</p>
                 }
                 <a style={this.props.styles}
@@ -53,7 +53,7 @@ class Maggie extends React.Component {
                     <img className='maggie-png'
                         src={this.props.currentImageSrc}>
                     </img>
-                </a> 
+                </a>
             </div>
         )
     }
