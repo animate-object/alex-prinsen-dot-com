@@ -6,7 +6,8 @@ export const PostList = props => {
   return (
     <div className="post-list-container">
       <ul className="post-list-content">
-        {props.postList.length > 0 &&
+        {props.postList &&
+          props.postList.length > 0 &&
           props.postList.map(post => {
             return <PostListEntry key={post} title={post} />;
           })}

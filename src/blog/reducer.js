@@ -19,6 +19,7 @@ export const BLOG_INITIAL_STATE = {
 };
 
 export function reducer(state = BLOG_INITIAL_STATE, action) {
+  console.log(action, state);
   switch (action.type) {
     case LOAD_POST_LIST_REQUEST:
       return { ...state, isFetching: true };

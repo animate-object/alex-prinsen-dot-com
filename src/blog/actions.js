@@ -46,7 +46,7 @@ export function loadPostList() {
   return function(dispatch, getState) {
     const blogState = getState().blog;
     if (blogState.listOfPosts != null && blogState.listOfPosts.length > 0) {
-      dispatch(loadPostListSuccess(getState().listOfPosts));
+      dispatch(loadPostListSuccess(blogState.listOfPosts));
     } else {
       dispatch(loadPostListRequest());
       getPostList()

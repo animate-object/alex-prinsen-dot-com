@@ -15,22 +15,33 @@ const vanillaJsWidgets = [
   )
 ];
 
+const elmWidgets = [
+  widget(
+    "rain.html",
+    "Rain (WIP)",
+    "A 'flood the board' style game with triangles in pure elm"
+  )
+];
+
 const widgetGroup = (title, group) => ({ title, group });
 
-const widgetGroups = [widgetGroup("Vanilla JS Experiments", vanillaJsWidgets)];
+const widgetGroups = [
+  widgetGroup("Vanilla JS Experiments", vanillaJsWidgets),
+  widgetGroup("Elm Projects", elmWidgets)
+];
 
 export const Widgets = () => (
-  <div class="container">
-    <div class="list">
+  <div className="container">
+    <div className="list">
       {widgetGroups.map(g => (
-        <div key={g.title} class="group">
-          <span class="group-title">{g.title}</span>
-          <div class="group-content">
+        <div key={g.title} className="group">
+          <span className="group-title">{g.title}</span>
+          <div className="group-content">
             {g.group.map(w => (
-              <a href={w.href} class="widget">
-                <div key={w.title} class="widget-entry">
-                  <span class="widget-title">{w.title}</span>
-                  <span class="widget-info">{w.desc}</span>
+              <a key="w.title" href={w.href} className="widget">
+                <div key={w.title} className="widget-entry">
+                  <span className="widget-title">{w.title}</span>
+                  <span className="widget-info">{w.desc}</span>
                 </div>
               </a>
             ))}
