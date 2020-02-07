@@ -12,8 +12,14 @@ const vanillaJsWidgets = [
     "stripees.html",
     "Stripees",
     "Started as an experiment with css width/height animations"
-  )
+  ),
+  widget("word.html", "Letters -> Words", "Prototype to test orthografish api.")
 ];
+
+const reactGames = [
+  widget("https://orthogra.fish", "Orthografish!", "Earth's favorite spelling game."),
+  widget("https://orthogra.fish/#/learner", "Spelling drills!", "Orthogra.fish spinoff to drill short word speling.")
+]
 
 const elmWidgets = [
   widget(
@@ -27,7 +33,8 @@ const widgetGroup = (title, group) => ({ title, group });
 
 const widgetGroups = [
   widgetGroup("Vanilla JS Experiments", vanillaJsWidgets),
-  widgetGroup("Elm Projects", elmWidgets)
+  widgetGroup("Elm Projects", elmWidgets),
+  widgetGroup("React Projects", reactGames)
 ];
 
 export const Widgets = () => (
