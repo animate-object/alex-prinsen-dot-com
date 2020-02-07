@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <title>alex prinsen dot com</title>
+      <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes=32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16" />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+      <link
+        href="https://fonts.googleapis.com/css?family=Lato"
+        rel="stylesheet"
+      />
+    </head>
+    <title>stripees</title>
+    <style>
+      .root {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .stripe-container {
+        height: 5%;
+        position: relative;
+      }
+
+      .stripe {
+        width: 0;
+        height: 100%;
+        animation: grow-in 500ms ease-in;
+        animation-fill-mode: both;
+        position: absolute;
+      }
+
+      @keyframes grow-in {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 100%;
+        }
+      }
+    </style>
+    <script>
+      const makeStripes = (id, n) => {
+        const el = document.getElementById(id);
+        if (el != null) {
+          const stripes = new Array(n)
+            .fill(undefined)
+            .map((_, i) => makeStripe(i % 2 === 0));
+          stripes.forEach(s => el.appendChild(s));
+        }
+      };
+
+      const MAX_HEX = parseInt("ffffff", 16);
+
+      const randomHex = () => {
+        const hexVal = Math.floor(Math.random() * MAX_HEX).toString(16);
+        return `#${hexVal.padStart(6, "0")}`;
+      };
+
+      const leftOrRight = left => {
+        return left ? "left" : "right";
+      };
+
+      const makeStripe = left => {
+        console.log("stripe time");
+        const container = document.createElement("div");
+        container.classList.add("stripe-container");
+        const stripe = document.createElement("div");
+        stripe.classList.add("sliding");
+        stripe.classList.add("stripe");
+
+        stripe.style.backgroundColor = randomHex();
+        stripe.style[leftOrRight(left)] = 0;
+        container.appendChild(stripe);
+        return container;
+      };
+
+      setInterval(() => makeStripes("root", 50), 2000);
+    </script>
+  </head>
+
+  <body>
+    <div id="root" class="root"></div>
+  </body>
+</html>
