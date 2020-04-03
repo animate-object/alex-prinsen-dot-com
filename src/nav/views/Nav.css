@@ -1,10 +1,10 @@
 .nav ul {
   background-color: black;
-  height: 1em;
   width: 100vw;
   margin: 0;
-  padding: 1em 0 1em 0;
+  padding: 0.5rem 0;
   text-align: center;
+  font-size: 1.1rem;
 }
 
 .nav ul > li > a {
@@ -15,10 +15,22 @@
 
 .nav ul > li {
   display: inline;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  padding: 0.2rem;
+  border-radius: 2px;
 }
 
-.nav ul > li > a:hover {
+.nav ul > li:not(.active):hover {
+  background-color: #333333;
+}
+
+.nav ul > li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.nav ul > li:not(.active) > a:hover {
   color: lightgrey;
+}
+
+.nav ul > li.active {
+  background-color: #444444;
 }
