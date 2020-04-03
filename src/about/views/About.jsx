@@ -1,18 +1,11 @@
 import React from "react";
 import "./About.css";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
     text: "this site",
     href: "https://github.com/animate-object/alex-prinsen-dot-com"
-  },
-  {
-    text: "command line tool that generates dnd characters",
-    href: "https://github.com/animate-object/chargen"
-  },
-  {
-    text: "lambda that serves random text snippets from dynamo",
-    href: "https://github.com/animate-object/pithy-text-lambda"
   },
   {
     text: "a revolutionary library to check for tenness",
@@ -24,7 +17,8 @@ const projects = [
     href: "https://rejectedgnarl.bandcamp.com/album/brazen-savior/"
   },
   {
-    text: "pretty excellent baked macaroni and cheese (sorry, no link)"
+    text:
+      "pretty excellent baked macaroni and cheese (picture and recipe forthcoming)"
   }
 ];
 
@@ -51,7 +45,7 @@ export const About = () => (
         hiking and naturalism, cooking, biking, and song writing.
       </p>
       <h4>examples</h4>
-      <p>here are some projects I've worked on in my freetime</p>
+      <p>here's some stuff I've made</p>
       <ul className="projects">
         {projects.map(item => {
           return (
@@ -61,11 +55,10 @@ export const About = () => (
           );
         })}
       </ul>
-      <h4>coming soon</h4>
-      <ul>
-        <li>write ups about tech used on the site</li>
-        <li>more goofy widgets</li>
-      </ul>
+      <p>
+        check out my <b>technical projects</b>{" "}
+        <Link to="/projects">over here</Link>
+      </p>
     </div>
   </div>
 );

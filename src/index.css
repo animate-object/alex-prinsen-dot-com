@@ -1,5 +1,9 @@
-html, body {
-    margin: 0;
-    font-family: 'Lato', arial, sans-serif;
+html,
+body {
+  margin: 0;
+  font-family: "Lato", arial, sans-serif;
 }
 
+:root {
+  --link-blue: #000000;
+}

@@ -10,10 +10,10 @@ export const Nav = () => (
           <Link to="/">home</Link>
         </li>
         <li>
-          <Link to="/blog">blog</Link>
+          <Link to="/projects">projects</Link>
         </li>
         <li>
-          <Link to="/widgets">projects</Link>
+          <Link to="/blog">blog</Link>
         </li>
         <li>
           <Link to="/maggie">cat game</Link>

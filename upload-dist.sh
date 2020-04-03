@@ -12,6 +12,6 @@ echo ---------------------------------------------------
 for filename in dist/*; do
     key=${filename#dist/}
     echo uploading $filename to $key in $BUCKET_NAME
-    aws s3api put-object --bucket $BUCKET_NAME --key $key --body $filename --content-type "text/html" >  /dev/null
+    aws s3api put-object --region=us-east-2 --bucket $BUCKET_NAME --key $key --body $filename --content-type "text/html" >  /dev/null
 done
 

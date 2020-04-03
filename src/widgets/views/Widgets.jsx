@@ -33,13 +33,13 @@ const games = [
   widget(
     "https://orthogra.fish",
     "Orthografish",
-    "Earth's favorite spelling game.",
+    "Earth's favorite spelling game",
     "fullstack react lambda python aws"
   ),
   widget(
     "https://orthogra.fish/#/learner",
     "Spelling drills",
-    "Orthogra.fish spinoff to drill short word speling.",
+    "Orthogra.fish spinoff to drill short word speling",
     "fullstack react lambda python aws"
   ),
   widget(
