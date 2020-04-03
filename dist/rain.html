@@ -7,11 +7,27 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+
     <title>Rain</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ap-banner@0.0.5/index.js"
+    ></script>
     <script src="rain.min.js"></script>
   </head>
 
-  <body>
+  <body style="margin:0;">
+    <ap-banner
+      title="Rain: a browser game written in pure elm"
+      source="https://github.com/animate-object/rain"
+    >
+      <span slot="more-info">
+        Rain is a simple game about 'flooding the board' one color. I wrote it
+        using the delightful pure-functional frontend language Elm. With its
+        rich type system and the restrictions of pure FP, elm guarantees zero
+        run time errors.
+      </span>
+    </ap-banner>
     <div id="elm"></div>
     <script>
       const CACHE_LOCATION = "rain-game-data";
@@ -26,7 +42,7 @@
         flags = {};
       }
       console.log("Starting app with flags", flags);
-      const app = Elm.Main.init({
+      const app = Elm.Rain.init({
         node: document.getElementById("elm"),
         flags
       });
