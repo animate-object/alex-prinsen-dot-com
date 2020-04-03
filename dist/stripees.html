@@ -17,12 +17,14 @@
     </head>
     <title>stripees</title>
     <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
       .root {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        position: absolute;
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -51,6 +53,22 @@
         }
       }
     </style>
+    <script
+      type="module"
+      src="https://unpkg.com/ap-banner@0.0.7/index.js"
+    ></script>
+    <style>
+      ap-banner {
+        transition: opacity ease 1s;
+        min-height: 1rem;
+      }
+      ap-banner:not(:defined) {
+        opacity: 0;
+      }
+      ap-banner:defined {
+        opacity: 1;
+      }
+    </style>
     <script>
       const makeStripes = (id, n) => {
         const el = document.getElementById(id);
@@ -58,7 +76,7 @@
           const stripes = new Array(n)
             .fill(undefined)
             .map((_, i) => makeStripe(i % 2 === 0));
-          stripes.forEach(s => el.appendChild(s));
+          stripes.forEach((s) => el.appendChild(s));
         }
       };
 
@@ -69,11 +87,11 @@
         return `#${hexVal.padStart(6, "0")}`;
       };
 
-      const leftOrRight = left => {
+      const leftOrRight = (left) => {
         return left ? "left" : "right";
       };
 
-      const makeStripe = left => {
+      const makeStripe = (left) => {
         console.log("stripe time");
         const container = document.createElement("div");
         container.classList.add("stripe-container");
@@ -87,11 +105,21 @@
         return container;
       };
 
-      setInterval(() => makeStripes("root", 50), 2000);
+      setInterval(() => makeStripes("root", 10), 2000);
     </script>
   </head>
 
   <body>
+    <ap-banner
+      title="Get ready for some stripes! (warning this does not stop)"
+      source="https://github.com/animate-object/alex-prinsen-dot-com/blob/master/dist/stripees.html"
+    >
+      <span slot="more-info">
+        There's not too much going on with this one. It started as an experiment
+        with css animations. I thought it was pretty visually appealing though,
+        so, you're welcome ;)
+      </span>
+    </ap-banner>
     <div id="root" class="root"></div>
   </body>
 </html>
