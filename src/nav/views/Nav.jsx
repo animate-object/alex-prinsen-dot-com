@@ -7,19 +7,19 @@ export const Nav = () => (
     <nav>
       <ul>
         <li>
-          <Link to="/about">about</Link>
-        </li>
-        <li>
           <Link to="/">home</Link>
-        </li>
-        <li>
-          <Link to="/maggie">cat game</Link>
         </li>
         <li>
           <Link to="/blog">blog</Link>
         </li>
         <li>
-          <Link to="/widgets">widgets</Link>
+          <Link to="/widgets">projects</Link>
+        </li>
+        <li>
+          <Link to="/maggie">cat game</Link>
+        </li>
+        <li>
+          <Link to="/about">about</Link>
         </li>
       </ul>
     </nav>

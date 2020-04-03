@@ -1,61 +1,93 @@
 import React from "react";
 import "./Widgets.css";
 
-const widget = (href, title, desc) => ({
+const widget = (href, title, desc, tech) => ({
   href,
   title,
-  desc
+  desc,
+  tech
 });
 
-const vanillaJsWidgets = [
+const widgets = [
   widget(
-    "stripees.html",
+    "https://alexprinsen.com/stripees.html",
     "Stripees",
-    "Started as an experiment with css width/height animations"
+    "Get ready for some stripes",
+    "vanillajs"
   ),
-  widget("word.html", "Letters -> Words", "Prototype to test orthografish api.")
+  widget(
+    "https://alexprinsen.com/word.html",
+    "Simple word API GUI",
+    "A minimal frontend for my spelling API",
+    "vanillajs"
+  )
 ];
 
-const reactGames = [
-  widget("https://orthogra.fish", "Orthografish!", "Earth's favorite spelling game."),
-  widget("https://orthogra.fish/#/learner", "Spelling drills!", "Orthogra.fish spinoff to drill short word speling.")
-]
-
-const elmWidgets = [
+const games = [
   widget(
-    "rain.html",
-    "Rain (WIP)",
-    "A 'flood the board' style game with triangles in pure elm"
+    "https://animate-object.github.io/followed",
+    "Followed",
+    "A game of mazes and monsters",
+    "fullstack react lambda rust aws"
+  ),
+  widget(
+    "https://orthogra.fish",
+    "Orthografish",
+    "Earth's favorite spelling game.",
+    "fullstack react lambda python aws"
+  ),
+  widget(
+    "https://orthogra.fish/#/learner",
+    "Spelling drills",
+    "Orthogra.fish spinoff to drill short word speling.",
+    "fullstack react lambda python aws"
+  ),
+  widget(
+    "https://alexprinsen.com/rain.html",
+    "Rain",
+    "A 'flood the board' style game with triangles in pure elm",
+    "elm functional-programming"
   )
 ];
 
 const widgetGroup = (title, group) => ({ title, group });
 
 const widgetGroups = [
-  widgetGroup("Vanilla JS Experiments", vanillaJsWidgets),
-  widgetGroup("Elm Projects", elmWidgets),
-  widgetGroup("React Projects", reactGames)
+  widgetGroup("Games", games),
+  widgetGroup("Explorations", widgets)
 ];
 
 export const Widgets = () => (
   <div className="container">
-    <div className="list">
-      {widgetGroups.map(g => (
-        <div key={g.title} className="group">
-          <span className="group-title">{g.title}</span>
-          <div className="group-content">
-            {g.group.map(w => (
-              <a key="w.title" href={w.href} className="widget">
-                <div key={w.title} className="widget-entry">
-                  <span className="widget-title">{w.title}</span>
-                  <span className="widget-info">{w.desc}</span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-    <p>More wigets to come!</p>
+    {widgetGroups.map(group => (
+      <table className="widget-table" key={group.title}>
+        <tr>
+          <th colspan={3}>{group.title}</th>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>Description</td>
+          <td>Tech</td>
+        </tr>
+        {group.group.map(item => (
+          <tr
+            key={item.title}
+            className="table-row"
+            onClick={() => {
+              window.open(item.href);
+            }}
+          >
+            <td className="title-col">{item.title}</td>
+
+            <td className="desc-col">{item.desc}</td>
+            <td className="tech-col">
+              {item.tech.split(" ").map(tech => (
+                <span className="tech-tag">{tech}</span>
+              ))}
+            </td>
+          </tr>
+        ))}
+      </table>
+    ))}
   </div>
 );
