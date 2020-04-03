@@ -7,28 +7,81 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <script
+      type="module"
+      src="https://unpkg.com/ap-banner@0.0.7/index.js"
+    ></script>
+    <style>
+      ap-banner {
+        transition: opacity ease 1s;
+        min-height: 1rem;
+      }
+      ap-banner:not(:defined) {
+        opacity: 0;
+      }
+      ap-banner:defined {
+        opacity: 1;
+      }
+    </style>
   </head>
+  <ap-banner title="This is a simple front door to my word-api">
+    <div slot="more-info">
+      The word API runs in AWS lambda, so it can take a moment to warm up on a
+      cold start. This API powers my spelling games at
+      <a href="https://orthogra.fish" target="_blank">orthogra.fish</a>. There's
+      some interesting challenges in efficiently determining what can be spelled
+      with a set of letters. The underlying approach here involves storing a
+      string of sorted letters for each entry. Then you can perform a 'text
+      matching' lookup for each sorted subset of letters from the search string.
+      <br /><br />
+      Take for example the corpus: [act, chat, cat, ha, ah]. Here are the
+      processed records for the corpus:
 
-  <body style="font-size: 6rem;color:white;background-color: black; margin :0;">
+      <pre>
+        word | sorted
+        --------------
+        chat | acht
+        act  | act
+        cat  | act
+        ah   | ah
+        ha   | ah
+      </pre>
+
+      You can see already how we have some 'doubles' in the sorted column. So if
+      we take the search string "cat", and sort it ("act"), we can find entries
+      for both <i>act</i> AND <i>cat</i> for the price of a single match.
+      <br /><br />
+      Fundamentally, this approach lets us search against a set of combinations,
+      instead of the much larger set of permutations.
+    </div>
+  </ap-banner>
+  <body
+    style="font-size: 6rem; color: white; background-color: black; margin: 0;"
+  >
     <input
       onchange="update(event)"
       placeholder="enter some letters"
-      style="font-size: 6rem;width: 100%;background-color: darkslategrey; color: white;"
+      style="
+        font-size: 6rem;
+        width: 100%;
+        background-color: #222222;
+        color: white;
+      "
     />
     <div style="display: flex;">
       <button
         onclick="search()"
-        style="font-size: 6rem;background-color: darkslategrey; color: white;"
+        style="font-size: 6rem; background-color: #333333; color: white;"
       >
         Search
       </button>
-      <div style="width: 6rem"></div>
+      <div style="width: 6rem;"></div>
       <span id="countEl"></span>
     </div>
     <div id="wordsEl" style="font-size: 6rem;"></div>
     <script>
       query = "";
-      const update = evt => {
+      const update = (evt) => {
         query = evt.target.value;
       };
       const search = () => {
@@ -39,7 +92,7 @@
         );
         request.setRequestHeader("Content-Type", "application/json");
         request.send(JSON.stringify({ letters: query }));
-        request.onload = function() {
+        request.onload = function () {
           const response = JSON.parse(this.response);
 
           if (response.statusCode === 200) {
@@ -49,24 +102,24 @@
         };
       };
 
-      const writeWords = words => {
+      const writeWords = (words) => {
         const resultsDiv = document.getElementById("wordsEl");
         while (resultsDiv.firstChild) {
           resultsDiv.removeChild(resultsDiv.firstChild);
         }
-        const wordDivs = words.map(word => {
+        const wordDivs = words.map((word) => {
           wordDiv = document.createElement("div");
           wordDiv.appendChild(document.createTextNode(word));
           return wordDiv;
         });
         console.log(`writing ${wordDivs.length} words`);
-        wordDivs.forEach(div => {
+        wordDivs.forEach((div) => {
           console.log("appending child", div);
           resultsDiv.appendChild(div);
         });
       };
 
-      const writeCount = count => {
+      const writeCount = (count) => {
         document.getElementById("countEl").innerText = count;
       };
     </script>
