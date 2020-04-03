@@ -1,6 +1,6 @@
 .nav ul {
   background-color: black;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 0.5rem 0;
   text-align: center;
@@ -8,19 +8,21 @@
 }
 
 .nav ul > li > a {
-  color: white;
+  color: #efefef;
   display: inline;
   text-decoration: none;
+  outline: none;
 }
 
 .nav ul > li {
   display: inline;
   padding: 0.2rem;
   border-radius: 2px;
+  transition: background-color ease 250ms;
 }
 
 .nav ul > li:not(.active):hover {
-  background-color: #333333;
+  background-color: #444444;
 }
 
 .nav ul > li:not(:last-child) {
@@ -28,9 +30,9 @@
 }
 
 .nav ul > li:not(.active) > a:hover {
-  color: lightgrey;
+  color: #fefefe;
 }
 
 .nav ul > li.active {
-  background-color: #444444;
+  background-color: #656565;
 }
