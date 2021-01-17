@@ -40,6 +40,9 @@
         text-align: center;
         padding-top: 2rem;
       }
+
+      @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+      }
     </style>
   </head>
 
@@ -47,6 +50,7 @@
     <div class="content">
       <span class="text">Love is a choice you make every day</span>
       <iframe
+        id="video"
         width="980"
         height="550"
         class="box-shadow"
@@ -59,5 +63,12 @@
         Alexander Floyd and Jessica Wayson Prinsen, June 27th, 2020
       </span>
     </div>
+    <script>
+      if (window.screen.width < window.screen.height) {
+        const video = document.getElementById("video");
+        video.setAttribute("width", window.screen.width);
+        video.setAttribute("height", window.screen.width * 0.75);
+      }
+    </script>
   </body>
 </html>
